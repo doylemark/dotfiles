@@ -1,20 +1,13 @@
-# make aliases sudo-able
 alias sudo="sudo "
 
 HOST_NAME=minima
 
-source ~/.nvm/nvm.sh
-nvm use stable
-shopt -s autocd
-shopt -s histappend
+source ~/.nvm/nvm.sh nvm use stable
 
 export PATH=$PATH:$HOME/bin
 
 export HISTSIZE=5000
 export HISTFILESIZE=10000
-
-bind '"\e[A": history-search-backward'
-bind '"\e[B": history-search-forward'
 
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
@@ -38,9 +31,10 @@ print_before_the_prompt () {
 
 PROMPT_COMMAND=print_before_the_prompt
 PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
-PS1="$EMOJI >"
+PS1="mark@markdoyle:~$EMOJI $"
 
 fortune | cowsay -f tux
+neofetch
 
 function mkcd()
 {

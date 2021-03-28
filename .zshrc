@@ -14,6 +14,18 @@ function metar() {
 	curl "http://metar.vatsim.net/metar.php?id=$1"
 }
 
+function newrepo() {
+    gh repo create "$1" -y --private
+    git branch -M main
+    git push -u origin main
+}
+
+function gitlazy() {
+    git add .
+    git commit -a -m "$1"
+    git push
+}
+
 # -------
 # Aliases
 # -------
@@ -35,6 +47,19 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ~="cd ~"
 alias c="clear"
+alias dev="cd ~/dev"
+
+# ----------------------
+# Go Aliases
+# ----------------------
+alias air='$(go env GOPATH)/bin/air'
+alias mygo="cd $(go env GOPATH)/src/github.com/doylemark"
+
+# ----------------------
+# K8s Aliases
+# ----------------------
+alias k="kubectl"
+alias kg="kubectl get"
 
 # ----------------------
 # Git Aliases
@@ -51,6 +76,7 @@ alias gp='git pull'
 alias gpsh='git push'
 alias gss='git status -s'
 alias gs='echo ""; echo "*********************************************"; echo -e "   DO NOT FORGET TO PULL BEFORE COMMITTING"; echo "*********************************************"; echo ""; git status'
+alias gm="git rm --cached"
 
 function gcl() {
 	git clone $1
@@ -59,4 +85,8 @@ function gcl() {
 eval "$(starship init zsh)"
 
 export PATH="/usr/local/sbin:$PATH"
+export PATH=$PATH:/usr/local/go/bin
+
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh  # This loads NVM
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+

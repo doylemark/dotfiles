@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # -------
 # General Aliases
 # -------
@@ -57,6 +59,7 @@ alias gm="git rm --cached"
 alias gv="git remote get-url origin | xargs open $1" 
 alias gpo='git push origin "$(git symbolic-ref --short HEAD)"'
 alias grv="git reset --hard"
+alias gbc="git symbolic-ref --short HEAD | pbcopy "
 
 function gcl() {
 	git clone $1
@@ -85,3 +88,5 @@ export NVM_DIR="$HOME/.nvm"
 
 
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

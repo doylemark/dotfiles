@@ -1,0 +1,6 @@
+[ruby]
+disabled = true
+
+[character]
+error_symbol = "[*](red)"
+success_symbol = "[*](green)"

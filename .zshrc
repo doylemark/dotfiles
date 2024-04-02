@@ -1,5 +1,3 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # -------
 # General Aliases
 # -------
@@ -20,6 +18,7 @@ alias t="exa -T"
 alias cat="bat"
 alias ns="npm start"
 alias nr="npm run"
+alias d="docker"
 alias dc="docker compose"
 alias dcu="docker compose up"
 alias dcd="docker compose down"
@@ -27,7 +26,8 @@ alias dcb="docker compose build"
 alias diff="difft"
 alias tf="terraform"
 alias pn="pnpm"
-
+alias rsrc="source ~/.zshrc"
+alias genran="openssl rand -base64"
 # -----------------
 # Shortcuts
 # -----------------
@@ -54,7 +54,7 @@ alias gp='git pull'
 alias gpsh='git push'
 alias gpshu='git push --set-upstream origin master'
 alias gss='git status -s'
-alias gs='echo ""; echo "*********************************************"; echo -e "   DO NOT FORGET TO PULL BEFORE COMMITTING"; echo "*********************************************"; echo ""; git status'
+alias gs='git status'
 alias gm="git rm --cached"
 alias gv="git remote get-url origin | xargs open $1" 
 alias gpo='git push origin "$(git symbolic-ref --short HEAD)"'
@@ -81,12 +81,45 @@ precmd_functions+=(set_win_title)
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
+
+export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init - zsh)"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+
+# BUG: this is causing extremely slow startups so commenting out nvm for now
 export NVM_DIR="$HOME/.nvm"
+export NVM_LAZY=1
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+
+# bun completions
+[ -s "/Users/markdoyle/.bun/_bun" ] && source "/Users/markdoyle/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+
+# ranger
+export VISUAL=/opt/homebrew/bin/hx
+export EDITOR=/opt/homebrew/bin/hx
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# atuin
+eval "$(atuin init zsh --disable-up-arrow)"
+
+# pnpm
+export PNPM_HOME="/Users/markdoyle/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform

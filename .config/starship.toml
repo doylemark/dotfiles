@@ -1,0 +1,19 @@
+add_newline = false
+
+[docker_context]
+disabled=true
+
+[package]
+disabled = true
+
+[ruby]
+disabled = true
+
+[nodejs]
+disabled = true
+[character]
+error_symbol = "[*](red)"
+success_symbol = "[*](green)"
+
+[git_branch]
+# disabled = true

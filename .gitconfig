@@ -1,0 +1,19 @@
+[user]
+	email = mark@mdoyle.sh
+	name = Mark Doyle
+	signingkey = 231E354E70A6C986
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[push]
+	autoSetupRemote = true
+[commit]
+	gpgsign = true
+[gpg]
+	program = /usr/local/MacGPG2/bin/gpg2
+[tag]
+	forceSignAnnotated = true
+[alias]
+	undo = reset --soft HEAD^

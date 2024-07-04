@@ -7,6 +7,10 @@ alias p="pbpaste"
 alias rsrc="source ~/.zshrc"
 alias :q="exit"
 
+autoload edit-command-line; zle -N edit-command-line
+bindkey -M vicmd 'v' edit-command-line
+bindkey '^Xe' edit-command-line
+
 # Navigation Aliases
 alias ~="cd ~"
 alias o="open ." 
@@ -68,6 +72,7 @@ alias grv="git reset --hard"
 alias gb="git branch"
 alias gsw="git switch"
 alias cpb="git symbolic-ref --short HEAD | pbcopy "
+alias branch="git branch | grep -v \"^\*\" | fzf --height=20% --reverse --info=inline | xargs git checkout"
 alias cppb="git rev-parse --symbolic-full-name --abbrev-ref=loose @{-1}"
 
 function gitlazy() {
@@ -110,8 +115,6 @@ export BAT_THEME="GitHub"
 export VISUAL=nvim
 export EDITOR=nvim
 
-set -o emacs
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # atuin
@@ -125,7 +128,10 @@ esac
 # pnpm end
 export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 
-autoload -U +X bashcompinit && bashcompinit
+
+autoload -U compinit; compinit
+source ~/.config/fzf-tab/fzf-tab.plugin.zsh
+zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 # complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
 # bat

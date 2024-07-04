@@ -83,6 +83,7 @@ require('lazy').setup {
   },
   checker = {
     enabled = true,
+    notify = false,
   },
   ui = {
     icons = vim.g.have_nerd_font and {} or {

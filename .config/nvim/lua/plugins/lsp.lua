@@ -158,6 +158,7 @@ return { -- LSP Configuration & Plugins
       -- tsserver = {},
       --
       rust_analyzer = {
+        allFeatures = true,
         ['rust-analyzer'] = {
           cargo = {
             allFeatures = true,

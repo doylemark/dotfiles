@@ -50,6 +50,7 @@ function mkcd() {
 }
 
 # Git Aliases
+alias g='git'
 alias ga='git add'
 alias gaa='git add .'
 alias gaaa='git add -A'
@@ -71,6 +72,8 @@ alias gpo='git push origin "$(git symbolic-ref --short HEAD)"'
 alias grv="git reset --hard"
 alias gb="git branch"
 alias gsw="git switch"
+alias gsh="git show"
+alias gcp="git cherry-pick"
 alias cpb="git symbolic-ref --short HEAD | pbcopy "
 alias branch="git branch | grep -v \"^\*\" | fzf --height=20% --reverse --info=inline | xargs git checkout"
 alias cppb="git rev-parse --symbolic-full-name --abbrev-ref=loose @{-1}"

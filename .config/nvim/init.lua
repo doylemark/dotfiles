@@ -42,6 +42,16 @@ vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
 
 vim.opt.scrolloff = 10
+-- Disable showing all special characters
+vim.opt.list = false
+
+-- If you want to keep the list but remove or customize just the display of tabs or other specific characters:
+vim.opt.listchars = {
+  tab = '▸ ', -- Set to a more subtle indicator or space
+  trail = '·',
+  extends = '>',
+  precedes = '<',
+}
 
 vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
@@ -51,16 +61,18 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
-vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
-vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
-vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
-vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
-
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
-vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { desc = '[O]pen [D]iagnostics' })
+vim.keymap.set('n', '<leader>od', vim.diagnostic.open_float, { desc = '[O]pen [D]iagnostics' })
+
+vim.keymap.set('i', '<C-b>', '<ESC>^i', { desc = 'move beginning of line' })
+vim.keymap.set('i', '<C-e>', '<End>', { desc = 'move end of line' })
+vim.keymap.set('i', '<C-h>', '<Left>', { desc = 'move left' })
+vim.keymap.set('i', '<C-l>', '<Right>', { desc = 'move right' })
+vim.keymap.set('i', '<C-j>', '<Down>', { desc = 'move down' })
+vim.keymap.set('i', '<C-k>', '<Up>', { desc = 'move up' })
 
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
@@ -68,6 +80,11 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function()
     vim.highlight.on_yank()
   end,
+})
+
+vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
+  pattern = '*.js.tpl',
+  command = 'set filetype=javascript',
 })
 
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'

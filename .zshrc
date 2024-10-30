@@ -142,3 +142,5 @@ export BAT_THEME="Monokai Extended"
 # zoxide
 eval "$(zoxide init zsh)"
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"

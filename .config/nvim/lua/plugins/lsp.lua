@@ -1,5 +1,13 @@
 return { -- LSP Configuration & Plugins
   'neovim/nvim-lspconfig',
+  init_options = {
+    userLanguages = {
+      eelixir = 'html-eex',
+      eruby = 'erb',
+      rust = 'html',
+      astra = 'java',
+    },
+  },
   dependencies = {
     -- Automatically install LSPs and related tools to stdpath for Neovim
     { 'williamboman/mason.nvim', config = true }, -- NOTE: Must be loaded before dependants

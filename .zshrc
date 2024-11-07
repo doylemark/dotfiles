@@ -31,6 +31,7 @@ alias tf="terraform"
 alias ns="npm start"
 alias nr="npm run"
 alias pn="pnpm"
+alias br="bin/rails"
 
 # Redirecting Aliases
 alias cd="z"
@@ -98,10 +99,10 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
-export NVM_DIR="$HOME/.nvm"
-export NVM_LAZY=1
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# export NVM_LAZY=1
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
@@ -129,7 +130,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
-export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 
 
 autoload -U compinit; compinit
@@ -142,5 +142,9 @@ export BAT_THEME="Monokai Extended"
 # zoxide
 eval "$(zoxide init zsh)"
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
+export PATH="/opt/homebrew/Cellar/ruby/3.3.6/bin:$PATH"
+# eval "$(jenv init - --no-rehash)"
+# (jenv rehash &) 2> /dev/null

@@ -1,10 +1,10 @@
 [font]
-# normal = { family = "MesloLGSDZ Nerd Font" }
-# italic = { family = "MesloLGSDZ Nerd Font", style = "Italic" }
-# bold = { family = "MesloLGSDZ Nerd Font", style = "Bold" }
-normal = { family = "JetBrainsMonoNL Nerd Font Mono" }
-italic = { family = "JetBrainsMonoNL Nerd Font Mono", style = "Italic" }
-bold = { family = "JetBrainsMonoNL Nerd Font Mono", style = "Bold" }
+normal = { family = "MesloLGSDZ Nerd Font" }
+italic = { family = "MesloLGSDZ Nerd Font", style = "Italic" }
+bold = { family = "MesloLGSDZ Nerd Font", style = "Bold" }
+# normal = { family = "JetBrainsMonoNL Nerd Font Mono" }
+# italic = { family = "JetBrainsMonoNL Nerd Font Mono", style = "Italic" }
+# bold = { family = "JetBrainsMonoNL Nerd Font Mono", style = "Bold" }
 # normal = { family = "Departure Mono" }
 # italic = { family = "Departure Mono" }
 # bold = { family = "Departure Mono" }

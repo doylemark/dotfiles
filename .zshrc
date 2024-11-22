@@ -19,8 +19,10 @@ export BAT_THEME="Monokai Extended"
 #-------------------------------------------------------------------------------
 # General Aliases
 #-------------------------------------------------------------------------------
-# Clear and navigation
+
 alias cls="clear && printf '\e[3J'"
+alias l="ls"
+alias ll="ls -al"
 alias c="clear"
 alias rsrc="source ~/.zshrc"
 alias :q="exit"
@@ -69,16 +71,28 @@ alias ga='git add'
 alias gaa='git add .'
 alias gaaa='git add -A'
 alias gc='git commit'
+alias gcl='git clone'
+alias gch='git checkout'
 alias gcm='git commit -m'
 alias gd='git diff'
+alias gi='git init'
+alias gl='git log'
 alias gp='git pull'
 alias gpsh='git push'
-alias gs='git status'
+alias gpshu='git push --set-upstream origin master'
 alias gss='git status -s'
-alias gv="git remote get-url origin | xargs open $1"
+alias gs='git status'
+alias gm="git rm --cached"
+alias gv="git remote get-url origin | xargs open $1" 
 alias gpo='git push origin "$(git symbolic-ref --short HEAD)"'
-alias cpb="git symbolic-ref --short HEAD | pbcopy"
+alias grv="git reset --hard"
+alias gb="git branch"
+alias gsw="git switch"
+alias gsh="git show"
+alias gcp="git cherry-pick"
+alias cpb="git symbolic-ref --short HEAD | pbcopy "
 alias branch="git branch | grep -v \"^\*\" | fzf --height=20% --reverse --info=inline | xargs git checkout"
+alias cppb="git rev-parse --symbolic-full-name --abbrev-ref=loose @{-1}"
 
 # Git Functions
 function gitlazy() {

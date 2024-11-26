@@ -52,15 +52,31 @@ return { -- Fuzzy Finder (files, lsp, etc)
     -- See `:help telescope` and `:help telescope.setup()`
     require('telescope').setup {
       -- defaults = {
-      file_ignore_patterns = { 'node_modules', '.git', '!{.env, .env.*}' },
+      file_ignore_patterns = { 'node_modules', '.git' },
       -- },
       pickers = {
         find_files = {
-          find_command = { 'rg', '--files', '--hidden', '-g', '!{.git, node_modules/, }' },
+          find_command = {
+            'rg',
+            '--ignore',
+            '--hidden',
+            '--files',
+            '-u',
+            '--glob=!**/node_modules/*',
+            '--glob=!**/.git/*',
+            '--glob=!**/target/*',
+          },
           theme = 'ivy',
         },
         live_grep = {
-          additional_args = { '--hidden', '-g', '!{.git/*, node_modules/, LICENSE} .env .env.local' },
+          additional_args = {
+            '--hidden',
+            '-u',
+            '--glob=!**/node_modules/*',
+            '--glob=!**/.git/*',
+            '--glob=!**/target/*',
+            '--glob=!**/LICENSE',
+          },
           theme = 'ivy',
         },
       },

@@ -177,6 +177,9 @@ return { -- LSP Configuration & Plugins
       rust_analyzer = {
         allFeatures = true,
         ['rust-analyzer'] = {
+          diagnostic = {
+            refreshSupport = false,
+          },
           cargo = {
             allFeatures = true,
           },

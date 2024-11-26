@@ -26,6 +26,7 @@ alias ll="ls -al"
 alias c="clear"
 alias rsrc="source ~/.zshrc"
 alias :q="exit"
+alias theme="sh ~/dotfiles/scripts/toggle.sh"
 
 # Modern replacements
 alias cat="bat"

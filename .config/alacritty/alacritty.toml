@@ -1,7 +1,12 @@
+import = ["~/dotfiles/.config/alacritty/github_light.toml"]
+
 [font]
+size = 16
 normal = { family = "MesloLGSDZ Nerd Font" }
 italic = { family = "MesloLGSDZ Nerd Font", style = "Italic" }
 bold = { family = "MesloLGSDZ Nerd Font", style = "Bold" }
+
+
 # normal = { family = "JetBrainsMonoNL Nerd Font Mono" }
 # italic = { family = "JetBrainsMonoNL Nerd Font Mono", style = "Italic" }
 # bold = { family = "JetBrainsMonoNL Nerd Font Mono", style = "Bold" }
@@ -11,60 +16,5 @@ bold = { family = "MesloLGSDZ Nerd Font", style = "Bold" }
 # normal = { family = "gg sans mono" }
 # italic = { family = "gg sans mono" }
 # bold = { family = "gg sans mono" }
-size = 16
 
-# [colors.primary]
-# background = "#272822"
-# foreground = "#f8f8f2"
-#
-[colors.cursor]
-# text = "#272822"
-# cursor = "#f8f8f2"
-#
-# [colors.normal]
-# black = "#272822"
-# red = "#f92672"
-# green = "#a6e22e"
-# yellow = "#f4bf75"
-# blue = "#66d9ef"
-# magenta = "#ae81ff"
-# cyan = "#a1efe4"
-# white = "#f8f8f2"
-#
-# [colors.bright]
-# black = "#75715e"
-# red = "#f92672"
-# green = "#a6e22e"
-# yellow = "#f4bf75"
-# blue = "#66d9ef"
-# magenta = "#ae81ff"
-# cyan = "#a1efe4"
-# white = "#f9f8f5"
-# Colors (iTerm 2 default theme)
-
-# Default colors
-[colors.primary]
-background = '#101421'
-foreground = '#fffbf6'
-
-# Normal colors
-[colors.normal]
-black = '#2e2e2e'
-red = '#eb4129'
-green = '#abe047'
-yellow = '#f6c744'
-blue = '#47a0f3'
-magenta = '#7b5cb0'
-cyan = '#64dbed'
-white = '#e5e9f0'
-
-# Bright colors
-[colors.bright]
-black = '#565656'
-red = '#ec5357'
-green = '#c0e17d'
-yellow = '#f9da6a'
-blue = '#49a4f8'
-magenta = '#a47de9'
-cyan = '#99faf2'
-white = '#ffffff'
+#THEME

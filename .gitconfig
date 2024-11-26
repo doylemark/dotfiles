@@ -17,3 +17,5 @@
 	forceSignAnnotated = true
 [alias]
 	undo = reset --soft HEAD^
+[core]
+	excludesfile = /Users/mark/.global.gitignore

@@ -187,9 +187,21 @@ alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
 
-# [[on-window-detected]]
-# if.app-id = 'com.hnc.Discord'
-# run = ['move-node-to-workspace 8']
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+run = ['move-node-to-workspace 1']
+
+[[on-window-detected]]
+if.app-id = 'org.Alacritty'
+run = ['move-node-to-workspace 2']
+
+[[on-window-detected]]
+if.app-id = 'com.hnc.Discord'
+run = ['move-node-to-workspace 5']
+
+[[on-window-detected]]
+if.app-id = 'com.spotify.client'
+run = ['layout floating']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.finder'
@@ -197,6 +209,10 @@ run = ['layout floating']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.PhotoBooth'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Preview'
 run = ['layout floating']
 
 [[on-window-detected]]

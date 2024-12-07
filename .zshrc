@@ -14,7 +14,6 @@ bindkey '^Xe' edit-command-line
 export VISUAL=nvim
 export EDITOR=nvim
 export evs=~/ev/scripts
-export BAT_THEME="Monokai Extended"
 
 #-------------------------------------------------------------------------------
 # General Aliases
@@ -29,7 +28,6 @@ alias :q="exit"
 alias theme="sh ~/dotfiles/scripts/toggle.sh"
 
 # Modern replacements
-alias cat="bat"
 alias diff="difft"
 alias ls="eza"
 alias t="eza -T"

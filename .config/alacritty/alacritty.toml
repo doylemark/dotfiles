@@ -1,4 +1,4 @@
-import = ["~/dotfiles/.config/alacritty/github_light.toml"]
+import = ["~/dotfiles/.config/alacritty/custom.toml"]
 
 [font]
 size = 16

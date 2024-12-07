@@ -147,8 +147,6 @@ brew "hashicorp/tap/terraform-ls"
 brew "julien-cpsn/atac/atac"
 # AeroSpace is an i3-like tiling window manager for macOS
 cask "aerospace"
-# Enable Windows-like alt-tab
-cask "alt-tab"
 # Desktop password and login vault
 cask "bitwarden"
 # Tool that provides consistent, highly configurable symbols for apps

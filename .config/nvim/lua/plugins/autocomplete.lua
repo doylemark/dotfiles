@@ -46,8 +46,7 @@ return { -- Autocompletion
         expandable_indicator = true,
         format = function(entry, item)
           if entry.source.name == 'copilot' then
-            item.kind = ''
-            -- robot
+            item.kind = ' Copilot'
           end
 
           return item

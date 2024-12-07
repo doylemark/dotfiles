@@ -32,6 +32,10 @@ return {
 
     require('nvim-tree').setup {
       -- All other configurations go inside the setup function
+      git = {
+        enable = true,
+        timeout = 400,
+      },
       sort_by = 'case_sensitive', -- Assuming 'sort' refers to file sorting within the tree
       view = {
         width = 30,

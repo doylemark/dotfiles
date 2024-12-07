@@ -41,17 +41,6 @@ return { -- Autocompletion
     luasnip.config.setup {}
 
     cmp.setup {
-      formatting = {
-        fields = { 'abbr', 'kind', 'menu' },
-        expandable_indicator = true,
-        format = function(entry, item)
-          if entry.source.name == 'copilot' then
-            item.kind = ' Copilot'
-          end
-
-          return item
-        end,
-      },
       window = {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
@@ -122,7 +111,6 @@ return { -- Autocompletion
             return require('cmp.types').lsp.CompletionItemKind[entry:get_kind()] ~= 'Text'
           end,
         },
-        { name = 'copilot' },
         { name = 'luasnip', group_index },
         { name = 'path' },
       },

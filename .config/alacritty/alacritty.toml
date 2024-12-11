@@ -5,6 +5,8 @@ size = 16
 normal = { family = "MesloLGSDZ Nerd Font" }
 italic = { family = "MesloLGSDZ Nerd Font", style = "Italic" }
 bold = { family = "MesloLGSDZ Nerd Font", style = "Bold" }
+offset.x = 0
+offset.y = 0
 
 
 # normal = { family = "JetBrainsMonoNL Nerd Font Mono" }

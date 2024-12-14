@@ -1,0 +1,25 @@
+font-family=MesloLGSDZ Nerd Font
+font-size=16
+
+title =👻 
+window-title-font-family=gg sans mono
+macos-titlebar-proxy-icon = hidden
+
+background = #101421
+foreground = #fffbf6
+palette = 0=#2e2e2e
+palette = 1=#eb4129
+palette = 2=#abe047
+palette = 3=#f6c744
+palette = 4=#47a0f3
+palette = 5=#7b5cb0
+palette = 6=#64dbed
+palette = 7=#e5e9f0
+palette = 8=#565656
+palette = 9=#ec5357
+palette = 10=#c0e17d
+palette = 11=#f9da6a
+palette = 12=#49a4f8
+palette = 13=#a47de9
+palette = 14=#99faf2
+palette = 15=#ffffff

@@ -132,10 +132,8 @@ fi
 source ~/.config/fzf-tab/fzf-tab.plugin.zsh
 zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 
-# Atuin shell history
 eval "$(atuin init zsh --disable-up-arrow)"
 
-# ZSH plugins
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Zoxide

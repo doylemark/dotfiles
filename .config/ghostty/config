@@ -5,6 +5,8 @@ title =👻
 window-title-font-family=gg sans mono
 macos-titlebar-proxy-icon = hidden
 
+background-opacity=0.9
+
 background = #101421
 foreground = #fffbf6
 palette = 0=#2e2e2e

@@ -222,3 +222,11 @@ run = ['layout floating']
 [[on-window-detected]]
 if.app-id = 'net.whatsapp.WhatsApp'
 run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.github.Electron'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.AcitivityMonitor'
+run = ['layout floating']

@@ -121,4 +121,4 @@ require('lazy').setup {
   },
 }
 
-vim.cmd.colorscheme 'monokai'
+vim.cmd.colorscheme 'monokai-pro-classic'

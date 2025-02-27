@@ -1,1 +1,1 @@
-return { 'tanvirtin/monokai.nvim' }
+return { 'loctvl842/monokai-pro.nvim' }

@@ -174,6 +174,23 @@ return { -- LSP Configuration & Plugins
       -- But for many setups, the LSP (`tsserver`) will work just fine
       -- tsserver = {},
       --
+      --
+
+      jdtls = {
+        settings = {
+          java = {
+            configuration = {
+              runtimes = {
+                {
+                  name = 'JavaSE-21',
+                  path = '/opt/homebrew/opt/openjdk/libexec/openjdk.jdk/Contents/Home',
+                },
+              },
+            },
+          },
+        },
+      },
+
       rust_analyzer = {
         allFeatures = true,
         ['rust-analyzer'] = {

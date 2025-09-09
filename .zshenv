@@ -1,3 +1,6 @@
-. "$HOME/.cargo/env"
-export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:/opt/homebrew/opt/python@3.13/libexec/bin
+# . "$HOME/.cargo/env"
+# export PATH=$PATH:/usr/local/go/bin
+#
+export PAY_DEFAULT_EDITOR=cursor
+
+export PYENV_VERSION=3.11.10

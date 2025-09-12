@@ -1,5 +1,5 @@
 return { -- LSP Configuration & Plugins
-  'git@git.corp.stripe.com:nms/nvim-lspconfig-stripe.git',
+  'git@git.corp.stripe.com:markd/nvim-lspconfig-stripe.git',
   -- init_options = {
   --   userLanguages = {
   --     eelixir = 'html-eex',

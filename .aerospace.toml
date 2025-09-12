@@ -230,3 +230,7 @@ run = ['layout floating']
 [[on-window-detected]]
 if.app-id = 'com.apple.AcitivityMonitor'
 run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.googlecode.munki.ManagedSoftwareCenter'
+run = ['layout floating']

@@ -1,5 +1,5 @@
 return { -- LSP Configuration & Plugins
-  'neovim/nvim-lspconfig',
+  'git@git.corp.stripe.com:nms/nvim-lspconfig-stripe.git',
   -- init_options = {
   --   userLanguages = {
   --     eelixir = 'html-eex',
@@ -16,10 +16,12 @@ return { -- LSP Configuration & Plugins
     -- Useful status updates for LSP.
     -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
     { 'j-hui/fidget.nvim', opts = {} },
-
+    'nvim-lua/plenary.nvim',
+    'neovim/nvim-lspconfig',
+    'pmizio/typescript-tools.nvim',
     -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
     -- used for completion, annotations and signatures of Neovim apis
-    { 'folke/neodev.nvim', opts = {} },
+    -- { 'folke/neodev.nvim', opts = {} },
   },
   config = function()
     -- Brief aside: **What is LSP?**
@@ -223,6 +225,14 @@ return { -- LSP Configuration & Plugins
         },
       },
     }
+
+    require 'lspconfig_stripe'
+    require 'lspconfig_stripe/tsserver'
+
+    local stripe_servers = { 'payserver_sorbet' }
+    for _, lsp in ipairs(stripe_servers) do
+      require('lspconfig')[lsp].setup {}
+    end
 
     -- Ensure the servers and tools above are installed
     --  To check the current status of installed tools and/or manually install
